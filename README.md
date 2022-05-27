@@ -4,7 +4,10 @@ Renders solutions with manim; installation docs here: https://docs.manim.communi
 
 Program is run with: ``manim visuals.py`` 
 
----
+# Priority to-do:
+
+- Proper support for multiple shapes (as in: 2 triangles, f.e.)
+- Add visualisation for all current base shapes
 
 # Current base shapes:
 
