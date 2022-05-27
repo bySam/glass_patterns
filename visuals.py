@@ -1,11 +1,25 @@
-from visuals import * 
+from manim import * 
 from math import sqrt
 import shapes
 
-class OpeningManim(Scene):
+class GlassDisplay(Scene):
     def construct(self):
-        self.add(self.triangle(15))
-    
+
+        n = int(input("Which number do you wish to test? "))
+
+        for solution in shapes.general_search(n)[:3]:   #First three ("best") solutions.
+                                                        #
+            print(solution)
+            if solution[0] == 'triangle':
+                text = Text("Triangle with rows: 1, 2, ..., ")
+                glasses = self.triangle(solution[1])
+                self.play(Create(glasses))
+                self.play(Write(text))
+                self.wait(5)
+                self.remove(glasses)
+
+            if solution[0] == 'square':
+                self.add(self.square(solution[1]))
 
     def square(self, n):
         glasses = VGroup(*[Circle(radius=0.25) for _ in range(n)])

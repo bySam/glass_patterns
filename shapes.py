@@ -63,7 +63,5 @@ def general_search(n):
             suggestions.append(("rectangle",factor,n/factor))
 
 
-    return suggestions
-
-
-print(general_search(20))
+    return sorted(suggestions,key=lambda x: x[1], reverse=True) #Returns the solutions sorted by factor size
+                                                                #So a solution with "size" 20 is prefered over two solutions with "size" 10, etc.
