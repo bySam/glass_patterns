@@ -2,6 +2,8 @@
 Suggest shapes to place pre-drink glasses in.
 Renders solutions with manim; installation docs here: https://docs.manim.community/en/stable/installation/windows.html
 
+Program is run with: ``manim visuals.py`` 
+
 Current base shapes:
 
 **triangle_number(n):**
