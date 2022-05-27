@@ -4,6 +4,8 @@ Renders solutions with manim; installation docs here: https://docs.manim.communi
 
 Program is run with: ``manim visuals.py`` 
 
+---
+
 Current base shapes:
 
 **triangle_number(n):**
