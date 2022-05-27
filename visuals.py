@@ -5,21 +5,32 @@ import shapes
 class GlassDisplay(Scene):
     def construct(self):
 
-        n = int(input("Which number do you wish to test? "))
+        x = int(input("Which number do you wish to test? "))
 
-        for solution in shapes.general_search(n)[:3]:   #First three ("best") solutions.
+        for solution in shapes.general_search(x)[:3]:   #First three ("best") solutions.
                                                         #
             print(solution)
             if solution[0] == 'triangle':
-                text = Text("Triangle with rows: 1, 2, ..., ")
+                text = Text("Triangle with rows: 1, 2, ... , " + str(int(solution[2]))).shift(UP*3)
                 glasses = self.triangle(solution[1])
-                self.play(Create(glasses))
+
                 self.play(Write(text))
-                self.wait(5)
+                self.play(Create(glasses))
+                self.wait(3)
                 self.remove(glasses)
+                self.remove(text)
 
             if solution[0] == 'square':
-                self.add(self.square(solution[1]))
+                text = Text("Square with side length: " + str(int(solution[2]))).shift(UP*3) 
+                glasses = self.square(solution[1])
+
+                self.play(Write(text))
+                self.play(Create(glasses))
+                self.wait(3)
+                self.remove(glasses)
+                self.remove(text)
+
+            
 
     def square(self, n):
         glasses = VGroup(*[Circle(radius=0.25) for _ in range(n)])

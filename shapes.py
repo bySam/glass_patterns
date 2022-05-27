@@ -24,7 +24,7 @@ def pentagonal_number(n): #https://en.wikipedia.org/wiki/Pentagonal_number#Tests
             return (True,(sqrt(discriminant)+1)/6) #n is a pentagonal number then! Returns: (True, the solution)
     return (False,None)
 
-def bow_tie(n):
+def bow_tie(n): #Two triangles with a shared middle-point.
     discriminant = (1/2)**2+n+1
 
     if discriminant > 0: #We don't want to take sqrt() of a negative number - that causes an error!
@@ -55,7 +55,7 @@ def general_search(n):
             suggestions.append(("bowtie",factor,bow_tie(factor)[1]))
 
         if square_number(factor-2): #if True
-            suggestions.append(("rhombus+2",factor,square_number(factor-2)[1]))
+            suggestions.append(("rhombus+2",factor,square_number(factor-2)[1])) #Remember: square+2 = rhombus+2
 
 
         if factor >= 0.2*n and factor <= 0.8*n and n/factor >= 0.2*n and n/factor <= 0.8*n: #can be made much nicer
