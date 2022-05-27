@@ -6,7 +6,7 @@ Program is run with: ``manim visuals.py``
 
 ---
 
-Current base shapes:
+# Current base shapes:
 
 **triangle_number(n):**
 
